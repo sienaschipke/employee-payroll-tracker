@@ -5,22 +5,27 @@ let employeeInfo = [];
 // Collect employee data
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
-  const individual = {};
   let addEmployee = true;
   while (addEmployee){
+    const individual = {};
+
     individual.firstName = prompt("Enter first name:");
     if (typeof individual.firstName !== 'string'){
       alert("You entered an incorrect name. Try again.");
     }
+  
     individual.lastName = prompt("Enter last name:");
     if (typeof individual.lastName !== 'string'){
       alert("You entered an incorrect name. Try again.");
     }
-    individual.salary = prompt("Enter salary:");
+    
+    individual.salary = Number(prompt("Enter salary:"));
     if (isNaN(individual.salary)){
       individual.salary = 0;
     }
+  
     employeeInfo.push(individual);
+  
     let isAddEmployee = confirm("Do you want to add another employee?");
     if (!isAddEmployee){
       addEmployee = false;
@@ -33,12 +38,12 @@ const collectEmployees = function() {
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
-  let sum;
-  let avg;
-  for (const person in employeesArray){
-    sum += Number(person.salary);
+  let sum = 0;
+  let avg = 0;
+  for (const person of employeesArray){
+    sum += person.salary;
   };
-  avg = sum/(employeesArray.length - 1);
+  avg = sum/(employeesArray.length);
   console.log(`There are ${employeesArray.length} employees with an average
   salary of \$${avg}.`);
 }

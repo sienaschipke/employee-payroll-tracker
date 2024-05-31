@@ -12,4 +12,4 @@ This project can be used by anyone who wishes to keep track of their employee da
 ![website screenshot](./Assets/Screenshot%202024-05-31%20at%204.01.35 PM.png)
 
 ## URL
-[text](https://sienaschipke.github.io/employee-payroll-tracker/)
+[Employee Payroll Tracker](https://sienaschipke.github.io/employee-payroll-tracker/)
